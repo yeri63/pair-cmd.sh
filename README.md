@@ -34,7 +34,7 @@ Quickly lookup ShadowImage and TrueCopy information on Hitachi VSP series arrays
     currently in use.
 
     Main Menu:
-
+    
       pd = Pair Status (pairdisplay)   pvc = Group Status (pairvolchk)
 
       pc = Pair Create (paircreate)    pcs = Pair Create + Suspend (paircreate)
@@ -46,4 +46,58 @@ Quickly lookup ShadowImage and TrueCopy information on Hitachi VSP series arrays
        ? = Additional Info
        q = quit
 
-    [350101 - Data Center 1] pair-cmd> 
+    [350101 - Data Center 1] pair-cmd> pd
+
+    Device Groups:
+
+       1. (TC) Prod_App1
+       2. (TC) Prod_App2
+
+       3. (SI) Dev_App3
+
+    [350101 - Data Center 1] group> 3
+
+    350101 - Data Center 1
+
+    Group               PairVol    L/R  Port#    TID  LU  M  Seq#    LDEV#  P/S   Status  %  P-LDEV#  M  CTG  CM  EM  E-Seq#  E-LDEV#  DM  P
+    ------------------  ---------  ---  -------  ---  --  -  ------  -----  ----  ------  -  -------  -  ---  --  --  ------  -------  --  -
+    Dev_App3            10A0-20A0  L    CL5-A-1  0    1   0  350101  10a0   SMPL  -       -  -        -  -    -   -   -       -        -   -
+    Dev_App3            10A1-20A1  L    CL5-A-1  0    1   0  350101  10a1   SMPL  -       -  -        -  -    -   -   -       -        -   -
+    ...
+
+    Main Menu:
+    
+      pd = Pair Status (pairdisplay)   pvc = Group Status (pairvolchk)
+
+      pc = Pair Create (paircreate)    pcs = Pair Create + Suspend (paircreate)
+      ps = Pair Suspend (pairsplit)    psd = Pair Delete (pairsplit)
+      pr = Pair Resync (pairresync)    prr = Reverse Pair Resync (pairresync)
+      
+      ht = Reverse Pair Resync DR (horctakeover)
+
+       ? = Additional Info
+       q = quit
+
+    [350101 - Data Center 1] pair-cmd> pc
+
+    Device Groups:
+    
+       1. (TC) Prod_App1
+       2. (TC) Prod_App2
+
+       3. (SI) Dev_App3
+
+    [350101 - Data Center 1] group> 3
+
+    Create new volume pairs from two unpaired volumes.
+      # paircreate -g <group> [-d <pair Vol>] -vl [-c <size>] -ISI[#]
+
+    Perform the operation for the entire group, or by individual pair.
+      # paircreate -g Dev_App3 -vl -c 15 -ISI100
+
+      # paircreate -g Dev_App3 -d 10A0-20A0 -vl -c 15 -ISI100
+      # paircreate -g Dev_App3 -d 10A1-20A1 -vl -c 15 -ISI100
+      ...
+
+    [350101 Data Center 1] pair-cmd> q
+    $
