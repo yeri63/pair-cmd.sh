@@ -47,12 +47,15 @@ Quickly lookup ShadowImage and TrueCopy information on Hitachi VSP series arrays
        q = quit
 
     [350101 - Data Center 1] pair-cmd> pd
+    
     Device Groups:
+    
        1. (TC) Prod_App1
        2. (TC) Prod_App2
        3. (SI) Dev_App3
 
     [350101 - Data Center 1] group> 3
+    
     350101 - Data Center 1
 
     Group               PairVol    L/R  Port#    TID  LU  M  Seq#    LDEV#  P/S   Status  %  P-LDEV#  M  CTG  CM  EM  E-Seq#  E-LDEV#  DM  P
@@ -62,6 +65,7 @@ Quickly lookup ShadowImage and TrueCopy information on Hitachi VSP series arrays
     ...
 
     Main Menu:
+    
       pd = Pair Status (pairdisplay)   pvc = Group Status (pairvolchk)
 
       pc = Pair Create (paircreate)    pcs = Pair Create + Suspend (paircreate)
@@ -74,12 +78,15 @@ Quickly lookup ShadowImage and TrueCopy information on Hitachi VSP series arrays
        q = quit
 
     [350101 - Data Center 1] pair-cmd> pc
+    
     Device Groups:   
+    
        1. (TC) Prod_App1
        2. (TC) Prod_App2
        3. (SI) Dev_App3
 
     [350101 - Data Center 1] group> 3
+    
     Create new volume pairs from two unpaired volumes.
       # paircreate -g <group> [-d <pair Vol>] -vl [-c <size>] -ISI[#]
 
