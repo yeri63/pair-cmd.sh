@@ -1,5 +1,5 @@
 # pair-cmd.sh
-<p>Quickly lookup ShadowImage and TrueCopy information on Hitachi VSP series arrays using CLI. This program does almost everything that Storage Navigator / Device Manager / Ops Center Protector does, but much faster within an ssh terminal. This was initially created to display an easier to read version of the pairdisplay command, but later evolved to perform other useful tasks, such as the commands listed below. The commands generated are intended to be saved and executed later using Cut&Paste.</p>
+<p>Quickly lookup ShadowImage and TrueCopy information on Hitachi VSP series arrays using CLI. This program does almost everything that Storage Navigator / Device Manager / Ops Center Protector does, but much faster from a ssh terminal. This was initially created to display an easier to read version of the pairdisplay command, but later evolved to perform other useful tasks, such as the commands listed below. The commands generated are intended to be saved and executed later using Cut&Paste.</p>
 <div align="center">
   
 Cmd | Operation | Description 
