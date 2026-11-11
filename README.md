@@ -1,5 +1,20 @@
 # pair-cmd.sh
-<p>Quickly lookup ShadowImage and TrueCopy information on Hitachi VSP series arrays using CLI. This program does almost everything that Storage Navigator / Device Manager / Ops Center Protector does, but much faster within an ssh terminal. This was initially created to display an easier to read version of the pairdisplay command, but later evolved to perform other useful tasks, like displaying the pair status by group, generating paircreate, pairsplit, pairresync, paircreate with suspend, pairdelete, reverse pairresync, and horctakeover commands. These commands are intended to be saved and executed later using Cut&Paste.</p>
+<p>Quickly lookup ShadowImage and TrueCopy information on Hitachi VSP series arrays using CLI. This program does almost everything that Storage Navigator / Device Manager / Ops Center Protector does, but much faster within an ssh terminal. This was initially created to display an easier to read version of the pairdisplay command, but later evolved to perform other useful tasks, such as the commands listed below. The commands generated are intended to be saved and executed later using Cut&Paste.</p>
+<div align="center">
+  
+Cmd | Operation | Description 
+:--      | :--      | :--     
+pd | Pair Status | Display pair status of the volumes with a device group.
+pvc | Group Status | Display a status summary for the entire device group.
+pc | Pair Create | Create new volume pairs, start P-VOL -> S-VOL synchronization.
+ps | Pair Suspend | Split volume pairs, and allow R/W access to S-VOLs.
+pr | Pair Resync | Resync S-VOL with new P-VOL data, then restart P-VOL -> S-VOL.
+pcs | Pair Create + Suspend | Create and split pairs simultaneously. (SI only)
+psd | Pair Delete | Delete pairs. A paircreate is required to restore paired state.
+prr | Reverse Pair Resync | Perform reverse re-sync, ie. S-VOL -> P-VOL.
+ht | Horcm Takeover | Split volume pairs, and sync in the opposite direction. (TC only)
+
+</div>
 <p>For safety, all commands generated within this script are commented to prevent an accidental execution should they be inadvertantly pasted in an active SSH terminal session. The purpose of the status command is to quickly show which TrueCopy and ShadowImage groups are active, along with the replication direction (source to target). Since ShadowImage groups replicate within the same array, their serial number pairs will always be identical.</p>
 
     $ pair-cmd.sh --help
